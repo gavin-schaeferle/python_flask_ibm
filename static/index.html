@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
 		<title>#FakeNews</title>
 		<!-- Meta Tags -->
 		<meta charset="UTF-8">
@@ -11,7 +10,6 @@
 		<!-- Script Tags -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     	<script src="static/js/header.js"></script>
-    	<script src="scripts/scripts.js"></script>
 	</head>
 	<div class="topnav" id="myTopnav">
 			<a href="index.html" >Home</a>
@@ -27,12 +25,14 @@
   			</div>
   			<div class="column">
     			<h2>Input</h2>
-    			<form class="form">
-    				
+    			<form class="form" method = "post">
     				Input text:<br>
     				<input class="input" type="text" name="inputtext" id="inputtext" value=""/> <br> 
-    				<input type = "submit" value = "Submit" class="subButton" form="form" name="scriptbutton" />   				
+    				<input type = "submit" value = "Submit" class="subButton" form="form" name="scriptbutton" /> 				
     			</form>
+				{% if fooResponse is not none %}
+    					{{ fooResponse }}
+				{% endif %}
   			</div>
 		</div>
 		<div class="row2">
