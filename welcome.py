@@ -20,19 +20,15 @@ app = Flask(__name__)
 @app.route("/hello/<string:name>/")
 def hello(name):
     return render_template('test.html',name=name)
-
-@app.route('/', methods=['GET','POST'])
+@app.route('/')
+def first_welcome():
+	return render_template("index.html",my_string="Input")
+@app.route('/', methods=['POST'])
 def Welcome():
      #return "Hello World"
       #return app.send_static_file('index.html')
 	#return render_template('index.html')
-      if request.method == "GET":
-           return render_template("index.html",my_string = "MONSTER")
-
-      if request.form["submit"] == "submit":
-           doritos = request.form["inputtext"]
-           success = True
-           return render_template("index.html" ,fooResponse="You da best!!")
+	return render_template("index.html" ,my_string="You da best!!")
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
