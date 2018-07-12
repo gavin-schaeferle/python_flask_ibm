@@ -25,7 +25,7 @@ def Welcome():
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
-@app.route('/contact')
+@app.route('/contact.html')
 def showContactPage():
 	return app.send_static_file('contact.html')
 @app.route('/api/people')
