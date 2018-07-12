@@ -1,4 +1,4 @@
-import requests, sys, json, operator
+#import requests, sys, json, operator
 from watson_developer_cloud import NaturalLanguageUnderstandingV1
 
 
@@ -30,5 +30,5 @@ def parseResponse(text):
 
 	return resp, emotions
 
-if __name__ == "__main__":
-	parseResponse(sys.argv[1])
+#if __name__ == "__main__":
+#	parseResponse(sys.argv[1])
