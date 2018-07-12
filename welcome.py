@@ -22,16 +22,22 @@ def hello(name):
     return render_template(
         'test.html',name=name)
 @app.route('/')
+@app.route('/index.html', method=["GET","POST"])
 def Welcome():
      #return "Hello World"
-      return app.send_static_file('index.html')
-      #return render_template('template/index copy.html')
+      #return app.send_static_file('index.html')
+      return render_template('index.html')
+      if request.method == "GET":
+           return render_template("index.html")
+
+      if request.form["submit"] == "submit":
+           doritos = request.form["inputtext"]
+           success = True
+           return render_template("index.html", fooResponse=doritos if success else "Failed")
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
-@app.route('/index.html')
-def Home():
-	return app.send_static_file('index.html')
+
 @app.route('/contact.html')
 def showContactPage():
 	return app.send_static_file('contact.html')
