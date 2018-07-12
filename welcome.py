@@ -20,8 +20,8 @@ app = Flask(__name__)
 @app.route('/')
 def Welcome():
      #return "Hello World"
-    return app.send_static_file('index.html')
-
+    #return app.send_static_file('index.html')
+     return render_template('static/index.html')
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
