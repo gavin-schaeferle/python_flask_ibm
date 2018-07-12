@@ -13,19 +13,28 @@
 # limitations under the License.
 
 import os
-from flask import Flask, jsonify
+from flask import Flask, jsonify , flash, redirect, render_template, request, session, abort
 
 app = Flask(__name__)
-
+ 
+@app.route("/hello/<string:name>/")
+def hello(name):
+    return render_template(
+        'test.html',name=name)
 @app.route('/')
 def Welcome():
      #return "Hello World"
-    return app.send_static_file('index.html')
-
+      return app.send_static_file('index.html')
+      #return render_template('template/index copy.html')
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
-
+@app.route('/index.html')
+def Home():
+	return app.send_static_file('index.html')
+@app.route('/contact.html')
+def showContactPage():
+	return app.send_static_file('contact.html')
 @app.route('/api/people')
 def GetPeople():
     list = [
