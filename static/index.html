@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="stylesheets/iguana.css">
-		
-		<meta charset="utf-8">
+		<title>#FakeNews</title>
+		<!-- Meta Tags -->
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>#FakeNews???</title>
+		<!-- Style Tags -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/iguana.css">
+		<!-- Script Tags -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="js/header.js"></script>
 	</head>
+	<div class="topnav" id="myTopnav">
+			<a href="index.html" >Home</a>
+			<a href="contact.html">Contact Us</a>
+			<a href="javascript:void(0);" class="icon" onclick="updateNavClass()">&#9776;</a>
+	</div>
 	<body>
-		<div class="header">
-  			<h1>#FakeNews???</h1>
-		</div>
+		<header>#FakeNews???</header>
 		<div class="row">
   			<div class="column">
     			<h2>Description</h2>
@@ -20,7 +27,7 @@
     			<h2>Input</h2>
     			<form class="form">
     				Input text:<br>
-    				<input class="input" type="text" name="inputtext" id="inputtext" value=""<br> 
+    				<input class="input" type="text" name="inputtext" id="inputtext" value=""/> <br> 
     				<input type = "submit" value = "Submit" class="subButton" form="form" name="scriptbutton" />   				
     			</form>
   			</div>
@@ -31,8 +38,8 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
 			</div>
 		</div>
-		<div class="footer">
-  			<p>Indecisive Iguanas Inc.</p>
+		<div class="copywriteFoot" id="myFooter">
+				<p>&copy; 2018 Indesicive Iguanas. No rights reserved. Updated: 07-12-2018</p> 
 		</div>
 	</body>
 </html>
