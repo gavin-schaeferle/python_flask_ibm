@@ -25,14 +25,14 @@ def hello(name):
 def Welcome():
      #return "Hello World"
       #return app.send_static_file('index.html')
-	return render_template('index.html')
-      #if request.method == "GET":
-       #    return render_template("index.html")
+	#return render_template('index.html')
+      if request.method == "GET":
+           return render_template("index.html")
 
-      #if request.form["submit"] == "submit":
-       #    doritos = request.form["inputtext"]
-        #   success = True
-         #  return render_template("index.html", fooResponse=doritos if success else "Failed")
+      if request.form["submit"] == "submit":
+           doritos = request.form["inputtext"]
+           success = True
+           return render_template("index.html", fooResponse=doritos if success else "Failed")
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
