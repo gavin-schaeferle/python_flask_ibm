@@ -21,7 +21,7 @@ app = Flask(__name__)
 def hello(name):
     return render_template('test.html',name=name)
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def Welcome():
      #return "Hello World"
       #return app.send_static_file('index.html')
