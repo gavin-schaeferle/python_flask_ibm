@@ -19,14 +19,13 @@ app = Flask(__name__)
  
 @app.route("/hello/<string:name>/")
 def hello(name):
-    return render_template(
-        'test.html',name=name)
+    return render_template('test.html',name=name)
+
 @app.route('/')
-@app.route('/index.html')
 def Welcome():
      #return "Hello World"
-      #return app.send_static_file('index.html')
-      return render_template('index.html')
+      return app.send_static_file('index.html')
+	#return render_template('index.html')
       #if request.method == "GET":
        #    return render_template("index.html")
 
