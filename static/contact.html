@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact Us</title>
+<!-- Meta tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Style links -->
+<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/iguana.css">
+<!-- Script links -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery.mask.js"></script>
+<script src="js/header.js"></script>
+</head>
+<div class="topnav" id="myTopnav">
+        <a href="index.html" >Home</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="javascript:void(0);" class="icon" onclick="updateNavClass()">&#9776;</a>
+</div>
+
+<!-- Map under header -->
+<div class="map-responsive">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.2072113960567!2d-92.50922448448907!3d44.058429679109516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f75e31ce8e0165%3A0x708514ae389198e9!2sIBM!5e0!3m2!1sen!2sus!4v1531415606316" 
+    onload="this.width=screen.width;" style="border:0" allowfullscreen></iframe>
+</div>
+
+<header> Contact Us</header>
+<h1>IBM 2018 Hackathon Team Idecisive Iguanas</h1>
+
+<!-- Error printout section -->
+<div id="errors">
+        <p>
+            Please fix the following errors:
+        </p>
+        <div id="errorMessages">
+    
+        </div>
+    </div>
+    
+    <!-- Form -->
+    <form method="get" action="https://github.com/gavin-schaeferle/python_flask_ibm" id="contactForm">
+        <fieldset>
+            <legend>Request for Information Form</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="firstname">First Name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="firstname" id="firstname" class="required hilightable" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="lastname">Last Name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="lastname" id="lastname" class="required hilightable" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                    </td>
+                    <td>
+                        <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" class="required hilightable" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phonenumber">Phone</label>
+                    </td>
+                    <td>
+                        <input type="tel" name="phonenumber" id="phonenumber" placeholder="(123)456-7890" class="hilightable" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit" id="register" name="register" class="button centered">
+                    </td>
+                    <td>
+                        <input type="reset" value="Clear Form" id="clearform" name="clearform" class="button centered">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+
+<script src="js/contactform.js"></script>
+
+<!-- Footer -->
+<div class="copywriteFoot" id="myFooter">
+    <p>&copy; 2018 Indesicive Iguanas. No rights reserved. Updated: 07-12-2018</p> 
+</div>
+</body>
+</html>

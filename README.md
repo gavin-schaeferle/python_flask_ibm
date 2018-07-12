@@ -1,14 +1,31 @@
-# Python Flask Hello World Sample
+# Cognitive Solutations
 
-This application demonstrates a simple, reusable Python web application based on the [Flask microframework](http://flask.pocoo.org/).
+IBM 2018 Technical Intern Hack-a-thon project with the subject "Cognitive Solutions."
 
-## Run the app locally
+## Getting Started
 
-1. [Install Python][]
-1. cd into this project's root directory
-1. Run `pip install -r requirements.txt` to install the app's dependencies
-1. Run `python welcome.py`
-1. Access the running app in a browser at <http://localhost:5000>
-1. work
-[Install Python]: https://www.python.org/downloads/
-# python_flask_ibm
+Initial upload.  No project available at this time.
+
+## Built With
+
+* [IBMCloud](https://www.ibm.com/cloud/) - Web hosting
+* [GitHub](https://github.com/) - Version and document management
+
+## Authors
+
+* **Kyle Jon Aure** - *Initial work* - [KyleAure](https://github.com/KyleAure)
+* **Hannah Reuss** - *Initial work* - [HannahReuss](https://github.com/hannah-reuss)
+* **Gavin Schaeferle** - *Initial work* - [???](#)
+* **Katherine Kairis** - *Initial work* - [???](#)
+* **Jodie Wei** - *Initial work* - [???](#)
+* **Isabelle Nguyen** - *Initial work* - [???](#)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* IBM for hosing the 2018 Technical Intern Hack-a-thon.
+* All of the volunteers that helped us achive our goals.
+
