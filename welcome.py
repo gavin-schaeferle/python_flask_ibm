@@ -32,7 +32,7 @@ def Welcome():
       if request.form["submit"] == "submit":
            doritos = request.form["inputtext"]
            success = True
-           return render_template("index.html" fooResponse="You da best!!")
+           return render_template("index.html" ,fooResponse="You da best!!")
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
