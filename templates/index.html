@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>#FakeNews</title>
-		<!-- Meta Tags -->
-		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../static/stylesheets/iguana.css">		
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Style Tags -->
-		<link rel="stylesheet" type="text/css" href="static/stylesheets/iguana.css">
-		<!-- Script Tags -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    	<script src="static/js/header.js"></script>
+		<!-- <script type="text/javascript" src="bar.js"></script>-->	
+		<title>#FakeNews???</title>
 	</head>
 	<div class="topnav" id="myTopnav">
 			<a href="index.html" >Home</a>
@@ -27,18 +23,58 @@
     			<h2>{{my_string}}</h2>
     			<form class="form" method = "POST">
     				Input text:<br>
-    				<input class="input" type="text" name="inputtext" id="inputtext" value=""/> <br> 
-    				<input type = "submit" value = "Submit" class="subButton" form="form" name="scriptbutton" /> 				
+    				<textarea class="input" type="text" name="inputtext" id="inputtext" value="" wrap="soft" rows="4" columns="50"></textarea><br> 
+    				<input type = "submit" value = "Submit" class="subButton" form="form" name="scriptbutton" onClick="emotionChart()"/>   				
     			</form>
-				{% if fooResponse is not none %}
-    					{{ fooResponse }}
-				{% endif %}
   			</div>
 		</div>
 		<div class="row2">
 			<div class="column2">
 				<h2>Results</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+				<div class="container">
+				<canvas id="Chart" class="chart"></canvas>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+				<script>
+					var jsonData = {"usage": {"text_characters": 19, "features": 3, "text_units": 1}, "keywords": [{"relevance": 0.916502, "text": "car"}], "emotion": {"document": {"emotion": {"anger": 0.165878, "joy": 0.077431, "sadness": 0.285616, "fear": 0.237504, "disgust": 0.103438}}}, "language": "en", "sentiment": {"document": {"score": -0.66457, "label": "negative"}}}
+					var ctx = document.getElementById("Chart").getContext('2d');
+					var myChart = new Chart(ctx, data = {
+    					type: 'bar',
+    					data: {
+        					labels: ["Anger", "Joy", "Sadness", "Fear", "Disgust"],
+        					datasets: [{
+            					label: 'Percent Rating',
+           						data: [jsonData.emotion.document.emotion.anger, jsonData.emotion.document.emotion.joy, jsonData.emotion.document.emotion.sadness, jsonData.emotion.document.emotion.fear, jsonData.emotion.document.emotion.disgust],
+            					backgroundColor: [
+                					'rgba(255, 99, 132, 0.2)',
+                					'rgba(54, 162, 235, 0.2)',
+                					'rgba(255, 206, 86, 0.2)',
+                					'rgba(75, 192, 192, 0.2)',
+                					'rgba(153, 102, 255, 0.2)',
+            					],
+            					borderColor: [
+                					'rgba(255,99,132,1)',
+                					'rgba(54, 162, 235, 1)',
+                					'rgba(255, 206, 86, 1)',
+                					'rgba(75, 192, 192, 1)',
+                					'rgba(153, 102, 255, 1)',
+            					],
+            					borderWidth: 1
+        					}]
+    					},
+    					options: {
+        					scales: {
+            					yAxes: [{
+                					ticks: {
+                    					beginAtZero:true,
+                    					max: 1,
+                    					stepSize: 0.1,
+                					}
+            					}]
+        					}
+    					}
+				});
+			</script>
+			</div>
 			</div>
 		</div>
 		<div class="copywriteFoot" id="myFooter">
