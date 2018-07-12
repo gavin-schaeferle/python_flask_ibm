@@ -27,7 +27,7 @@ def Welcome():
       #return app.send_static_file('index.html')
 	#return render_template('index.html')
       if request.method == "GET":
-           return render_template("index.html")
+           return render_template("index.html",my_string = "MONSTER")
 
       if request.form["submit"] == "submit":
            doritos = request.form["inputtext"]
