@@ -24,8 +24,8 @@ def hello(name):
 @app.route('/')
 def Welcome():
      #return "Hello World"
-      return app.send_static_file('index.html')
-	#return render_template('index.html')
+      #return app.send_static_file('index.html')
+	return render_template('index.html')
       #if request.method == "GET":
        #    return render_template("index.html")
 
