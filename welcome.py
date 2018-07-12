@@ -14,6 +14,7 @@
 
 import os
 from flask import Flask, jsonify , flash, redirect, render_template, request, session, abort
+import analysis
 
 app = Flask(__name__)
  
@@ -28,7 +29,7 @@ def Welcome():
      #return "Hello World"
       #return app.send_static_file('index.html')
 	#return render_template('index.html')
-	return("you entered text")
+	return analysis.getStats("A bunny needs food to live")
 	#return render_template("index.html" ,my_string="You da best!!")
 @app.route('/myapp')
 def WelcomeToMyapp():
