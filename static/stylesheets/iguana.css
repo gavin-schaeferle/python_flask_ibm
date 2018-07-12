@@ -4,6 +4,7 @@
     font-size: 1.5vw;
     /*font-style: italic;*/
     color: #1d1e1e;
+    box-sizing: border-box;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
 
 header {
     text-align: center;
+    background-color: #222629;
     color: #86C232; 
     padding: 20px;
     font-size: 5vw;
@@ -44,13 +46,19 @@ div.column h2 {
 	
 }
 
+.Chart {
+	width: 50%;
+}
+
 .form {
 	width: 100%;
+	word-break: break-word;
 }
 
 .input {
 	width: 100%;
 	min-height: 100px;
+	word-break: break-word;
 }
 
 /* Clear floats after the columns */
@@ -68,6 +76,11 @@ div.column h2 {
     padding-bottom: 10px;
 }
 
+.container {
+	width: 50%;
+	background-color: #FFFFFF;
+}
+
 .subButton {
 	color: #86C232;
 }
@@ -80,7 +93,9 @@ div.column2 h2 {
     content: "";
     display: table;
     clear: both;
-    padding-bottom: 10px;
+}
+.row2 {
+	height: 50%;
 }
 
 .copywriteFoot{
@@ -100,7 +115,8 @@ div.column2 h2 {
     background-color: #222629;
     color: #86C232; 
     text-align: center;
-    
+    bottom: 0;
+    width: 100%;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
