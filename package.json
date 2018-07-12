@@ -1,0 +1,24 @@
+{
+  "name": "python_flask_ibm",
+  "version": "1.0.0",
+  "description": "ibm intern hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavin-schaeferle/python_flask_ibm.git"
+  },
+  "author": "indecisive iguanas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gavin-schaeferle/python_flask_ibm/issues"
+  },
+  "homepage": "https://github.com/gavin-schaeferle/python_flask_ibm#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "require": "^2.4.20"
+  }
+}
