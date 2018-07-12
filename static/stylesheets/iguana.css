@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+    background-color: #222629;
+    color: #86C232; 
+    text-align: center;
+    padding: 20px;
+}
+
+body {
+	color: navy;
+	background-color: #6B6E70;
+}
+
+/* Create 2 equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 15px;
+    color: #FFFFFF;
+}
+
+h2 {
+	color: #86C232;
+}
+
+div.column h2 {
+	text-align: center;
+	
+}
+
+.form {
+	width: 100%;
+}
+
+.input {
+	width: 100%;
+	min-height: 100px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column2 {
+    float: left;
+    width: 100%;
+    padding: 15px;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.subButton {
+	color: #86C232;
+}
+
+div.column2 h2 {
+	text-align: center;
+}
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+    padding-bottom: 10px;
+}
+
+.footer {
+    padding: 10px;
+    position: absolute;
+    background-color: #222629;
+    color: #86C232; 
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
