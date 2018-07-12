@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./static/stylesheets/iguana.css">
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>#FakeNews???</title>
+	</head>
+	{% block body %}
+	<body>
+		<div class="header">
+  			<h1>#FakeNews???</h1>
+		</div>
+		<div class="row">
+  			<div class="column">
+    			<h2>Description</h2>
+    			<p>Ever wondered what your favorite news anchor or news corporation thinks of a particular event? Ever wonder what their tone really says about the story? Paste in the text of the news article and find out! Our algorithm will output what the text is really trying to say!</p>
+  			</div>
+  			<div class="column">
+    			<h2>Input</h2>
+    			<form class="form">
+    				Input text:<br>
+    				<input class="input" type="text" name="inputtext" id="inputtext" value=""<br> 
+    				<input type = "submit" value = "Submit" class="subButton" form="form" name="scriptbutton" />   				
+    			</form>
+  			</div>
+		</div>
+		<div class="row2">
+			<div class="column2">
+				<h2>Results</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+			</div>
+		</div>
+		<div class="footer">
+  			<p>Indecisive Iguanas Inc.</p>
+		</div>
+		{% endblock %}
+	</body>
+</html>
