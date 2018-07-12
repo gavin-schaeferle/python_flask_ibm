@@ -1,1 +1,1 @@
-web: python flask.py
+web: python welcome.py
