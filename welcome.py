@@ -21,9 +21,6 @@ app = Flask(__name__)
 def hello(name):
     return render_template(
         'test.html',name=name)
- 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
 @app.route('/')
 def Welcome():
      #return "Hello World"
