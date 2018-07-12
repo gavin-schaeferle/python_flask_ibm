@@ -7,4 +7,4 @@ applications:
     disk_quota: 1024M
     services:
       - Machine Learning-x0
-      - Natural Language Understand-rc
+      - Natural Language Understanding-rc
