@@ -28,7 +28,8 @@ def Welcome():
      #return "Hello World"
       #return app.send_static_file('index.html')
 	#return render_template('index.html')
-	return render_template("index.html" ,my_string="You da best!!")
+	return("you entered text")
+	#return render_template("index.html" ,my_string="You da best!!")
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
