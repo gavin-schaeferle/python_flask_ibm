@@ -120,26 +120,15 @@ const server = http.createServer((req, res) => {
                             color: #86C232;
                         }
 
+			.column2 {
+			width: 100%;
+}
+
                         /* Clear floats after the columns */
                         .row:after {
                             content: "";
                             display: table;
                             clear: both;
-                        }
-
-
-                        /* Second Row Stuff */
-                        .Chart {
-                            width: 50%;
-                            background-color: #FFFFFF;
-                        }
-
-                        .container {
-                            background-color: #FFFFFF;
-                        }
-
-                        .other {
-                            width: 50%;
                         }
 
                         .copywriteFoot p{
@@ -173,9 +162,17 @@ const server = http.createServer((req, res) => {
                                 width: 100%;
                             }
                             
-                            .copywriteFoot { 
-                                font-size: 12px; 
-                            }
+                            .copywriteFoot {
+                            bottom: 0;
+                            background-color: #222629;
+                            text-align: center;
+                            font-size: 2vw;
+                            margin-top: 1.5em;
+                            padding-top: 1em;
+                            padding-bottom: 1em;
+                            color: #86C232;
+                            border-top: double;
+                        }
                             
                             .topnav a:not(:first-child) { 
                                 display: none;
