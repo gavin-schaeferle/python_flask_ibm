@@ -86,6 +86,14 @@
 					document.getElementById("senti").innerHTML = "Sentiment: " + jsonData.sentiment.document.label;						
 				</script>
 			</div>
+			<div class="column2">
+				<h2>More Results</h2>
+				<p id="senti">HERE</p>
+				<script>
+					var jsonData = {"usage": {"text_characters": 19, "features": 3, "text_units": 1}, "keywords": [{"relevance": 0.916502, "text": "car"}], "emotion": {"document": {"emotion": {"anger": 0.165878, "joy": 0.077431, "sadness": 0.285616, "fear": 0.237504, "disgust": 0.103438}}}, "language": "en", "sentiment": {"document": {"score": -0.66457, "label": "negative"}}}
+					document.getElementById("senti").innerHTML = "Sentiment: " + jsonData.sentiment.document.label;						
+				</script>
+			</div>
 		</div>
 		<div class="copywriteFoot" id="myFooter">
 			<p>&copy; 2018 Indecisive Iguanas. No rights reserved. Updated: 07-12-2018</p> 
