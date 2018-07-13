@@ -363,7 +363,7 @@ const server = http.createServer((req, res) => {
                     <meta charset="utf-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1">
                     <!-- <script type="text/javascript" src="bar.js"></script>-->   
-                    <title>#FakeNews???</title>
+                    <title>Cognitive Article Analysis</title>
                 </head>
                 <div class="topnav" id="myTopnav">
                         <a href="../templates/index.html" >Home</a>
@@ -371,7 +371,7 @@ const server = http.createServer((req, res) => {
                         <a href="javascript:void(0);" class="icon" onclick="updateNavClass()">&#9776;</a>
                 </div>
                 <body>
-                    <header>#FakeNews???</header>
+                    <header>Cognitive Article Analysis</header>
                     <div class="row">
                         <div class="column">
                             <h2>Description</h2>
@@ -388,51 +388,7 @@ const server = http.createServer((req, res) => {
                     <div class="row">
                         <div class="column">
                             <h2>Results</h2>
-                                <div class="container">
-                                    <canvas id="Chart" class="chart"></canvas>
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-                                    <script>
-                                        var jsonData = ${result1}
-                                        var ctx = document.getElementById("Chart").getContext('2d');
-                                        var myChart = new Chart(ctx, data = {
-                                            type: 'bar',
-                                            data: {
-                                                labels: ["Anger", "Joy", "Sadness", "Fear", "Disgust"],
-                                                datasets: [{
-                                                    label: 'Percent Rating',
-                                                    data: [jsonData.emotion.document.emotion.anger, jsonData.emotion.document.emotion.joy, jsonData.emotion.document.emotion.sadness, jsonData.emotion.document.emotion.fear, jsonData.emotion.document.emotion.disgust],
-                                                    backgroundColor: [
-                                                        'rgba(255, 99, 132, 0.2)',
-                                                        'rgba(54, 162, 235, 0.2)',
-                                                        'rgba(255, 206, 86, 0.2)',
-                                                        'rgba(75, 192, 192, 0.2)',
-                                                        'rgba(153, 102, 255, 0.2)',
-                                                    ],
-                                                    borderColor: [
-                                                        'rgba(255,99,132,1)',
-                                                        'rgba(54, 162, 235, 1)',
-                                                        'rgba(255, 206, 86, 1)',
-                                                        'rgba(75, 192, 192, 1)',
-                                                        'rgba(153, 102, 255, 1)',
-                                                    ],
-                                                    borderWidth: 1
-                                                }]
-                                            },
-                                            options: {
-                                                scales: {
-                                                    yAxes: [{
-                                                        ticks: {
-                                                            beginAtZero:true,
-                                                            max: 1,
-                                                            stepSize: 0.1,
-                                                        }
-                                                    }]
-                                                }
-                                            }
-                                        });
-                                    </script>
-                                </div>
-                        </div>
+                                
                         <div class="column">
                             <h2>More Results</h2>
                             <p>the Biggest Mood is ${_.findKey(result1.emotion.document.emotion, function(v) { return v === _(result1.emotion.document.emotion).values().max() })} with a value of ${ _(result1.emotion.document.emotion).values().max()}</p>
