@@ -1,24 +1,4 @@
-const http = require('http');
-const { parse } = require('querystring');
-const fs = require('fs');
-const NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js');
-const _ = require('lodash');
-
-const server = http.createServer((req, res) => {
-    if (req.method === 'POST') {
-        collectRequestData(req, result => {
-            var resNew = result.textField
-            parseData(resNew, result1 => {
-            	//console.log(JSON.stringify(result1, null, 2))
-            	var listOfConcepts = []
-            	for(var key in result1.concepts) {
-            		listOfConcepts.push(result1.concepts[key].text)
-            		if(listOfConcepts.length == 10) {
-            			break
-            		}
-            	}
-            	res.end(`
-            		<!DOCTYPE html>
+<!DOCTYPE html>
             <html>
                 <head>
                     <style>
@@ -359,7 +339,7 @@ const server = http.createServer((req, res) => {
                             #errors p{ font-size: 12px; }
                             #errorMessages p{ font-size: 12px; }
                         }
-                    </style>        
+                    </style>     
                     <meta charset="utf-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1">
                     <!-- <script type="text/javascript" src="bar.js"></script>-->   
@@ -367,7 +347,7 @@ const server = http.createServer((req, res) => {
                 </head>
                 <div class="topnav" id="myTopnav">
                         <a href="../templates/index.html" >Home</a>
-                        <a href="../static/contact.html">Contact Us</a>
+                        <a href="contact.html">Contact Us</a>
                         <a href="javascript:void(0);" class="icon" onclick="updateNavClass()">&#9776;</a>
                 </div>
                 <body>
@@ -385,135 +365,8 @@ const server = http.createServer((req, res) => {
                             </form>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="column">
-                            <h2>Results</h2>
-                                <div class="container">
-                                    <canvas id="Chart" class="chart"></canvas>
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-                                    <script>
-                                        var jsonData = ${result1}
-                                        var ctx = document.getElementById("Chart").getContext('2d');
-                                        var myChart = new Chart(ctx, data = {
-                                            type: 'bar',
-                                            data: {
-                                                labels: ["Anger", "Joy", "Sadness", "Fear", "Disgust"],
-                                                datasets: [{
-                                                    label: 'Percent Rating',
-                                                    data: [jsonData.emotion.document.emotion.anger, jsonData.emotion.document.emotion.joy, jsonData.emotion.document.emotion.sadness, jsonData.emotion.document.emotion.fear, jsonData.emotion.document.emotion.disgust],
-                                                    backgroundColor: [
-                                                        'rgba(255, 99, 132, 0.2)',
-                                                        'rgba(54, 162, 235, 0.2)',
-                                                        'rgba(255, 206, 86, 0.2)',
-                                                        'rgba(75, 192, 192, 0.2)',
-                                                        'rgba(153, 102, 255, 0.2)',
-                                                    ],
-                                                    borderColor: [
-                                                        'rgba(255,99,132,1)',
-                                                        'rgba(54, 162, 235, 1)',
-                                                        'rgba(255, 206, 86, 1)',
-                                                        'rgba(75, 192, 192, 1)',
-                                                        'rgba(153, 102, 255, 1)',
-                                                    ],
-                                                    borderWidth: 1
-                                                }]
-                                            },
-                                            options: {
-                                                scales: {
-                                                    yAxes: [{
-                                                        ticks: {
-                                                            beginAtZero:true,
-                                                            max: 1,
-                                                            stepSize: 0.1,
-                                                        }
-                                                    }]
-                                                }
-                                            }
-                                        });
-                                    </script>
-                                </div>
-                        </div>
-                        <div class="column">
-                            <h2>More Results</h2>
-                            <p>the Biggest Mood is ${_.findKey(result1.emotion.document.emotion, function(v) { return v === _(result1.emotion.document.emotion).values().max() })} with a value of ${ _(result1.emotion.document.emotion).values().max()}</p>
-                            <p>This article may be trying to make you feel ${result1.sentiment.document.label} about the topic, with the sentiment score being ${result1.sentiment.document.score}</p>
-                            <p>Here are some concepts that may be useful for future research: </p>
-                            ${listOfConcepts.join(", ")}
-                        </div>
-                    </div>
                     <div class="copywriteFoot" id="myFooter">
                         <p>&copy; 2018 Indecisive Iguanas. No rights reserved. Updated: 07-12-2018</p> 
                     </div>
                 </body>
             </html>
-            	`);
-            }) 
-        });
-    } 
-    else {
-        fs.readFile('./index.html', function read(err, data) {
-            if (err) {
-                throw err;
-            }
-            res.writeHead(200, {'Content-Type':'text/html'});
-            res.write(data);
-            res.end();
-        })
-    }
-});
-server.listen(8080);
-
-function collectRequestData(request, callback) {
-    const FORM_URLENCODED = 'application/x-www-form-urlencoded';
-    if(request.headers['content-type'] === FORM_URLENCODED) {
-        let body = '';
-        request.on('data', chunk => {
-            body += chunk.toString();
-        });
-        request.on('end', () => {
-            callback(parse(body));
-        });
-    }
-    else {
-        callback(null);
-    }
-}
-
-/* FUNCTIONS */
-
-//access credentials
-var USERNAME = "ef261f02-50af-4207-bca5-e8cecb4f1234"
-var PASSWORD = "jSiVgDjYynBu"
-var VERSION = "2018-03-19"
-
-
-function parseData(input, callback) {
-	var nlu = new NaturalLanguageUnderstandingV1({
-		username: USERNAME,
-		password: PASSWORD,
-		version: VERSION,
-		url: 'https://gateway.watsonplatform.net/natural-language-understanding/api/'
-	});
-	nlu.analyze(
-		{
-			text: input, // Buffer or String
-			features: {
-				emotion: {},
-				concepts: {},
-				keywords: {},
-				sentiment: {}
-			},
-			language: "en"
-		},
-	
-		function(err, response) {
-			if (err) {
-				console.log('error:', err);
-				callback(null)
-			} else {
-				console.log('success');
-				console.log(JSON.stringify(response, null, 2));
-				callback(response)
-			}
-	});
-};
