@@ -131,6 +131,16 @@ const server = http.createServer((req, res) => {
                             clear: both;
                         }
 
+			.row2 {
+			    width: 100%;
+			}
+			
+			.row2:after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                        }
+
                         .copywriteFoot p{
                             width: 100%;
                             color: #86C232;
@@ -387,12 +397,9 @@ const server = http.createServer((req, res) => {
                             </form>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row2">
                         <div class="column">
                             <h2>Results</h2>
-                                
-                        <div class="column">
-                            <h2>More Results</h2>
                             <p>the Biggest Mood is ${_.findKey(result1.emotion.document.emotion, function(v) { return v === _(result1.emotion.document.emotion).values().max() })} with a value of ${ _(result1.emotion.document.emotion).values().max()}</p>
                             <p>This article may be trying to make you feel ${result1.sentiment.document.label} about the topic, with the sentiment score being ${result1.sentiment.document.score}</p>
                             <p>Here are some concepts that may be useful for future research: </p>
