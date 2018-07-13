@@ -113,6 +113,7 @@ const server = http.createServer((req, res) => {
                             width: 100%;
                             min-height: 100px;
                             word-break: break-word;
+			    height: 90%;
                         }
 
                         .subButton {
