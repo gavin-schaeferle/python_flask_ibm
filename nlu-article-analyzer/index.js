@@ -157,6 +157,10 @@ const server = http.createServer((req, res) => {
                             color: #86C232;
                             border-top: double;
                         }
+                        
+                        form.input {
+                        	height: 90%;
+                        }
 
                         /* Responsive layout - makes the three columns stack on top of each other instead of next to each other 
                             When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
