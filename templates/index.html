@@ -33,58 +33,50 @@
 		<div class="row2">
 			<div class="column2">
 				<h2>Results</h2>
-				<div class="container">
-				<canvas id="Chart" class="chart"></canvas>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-				<script>
-					var jsonData = {"usage": {"text_characters": 19, "features": 3, "text_units": 1}, "keywords": [{"relevance": 0.916502, "text": "car"}], "emotion": {"document": {"emotion": {"anger": 0.165878, "joy": 0.077431, "sadness": 0.285616, "fear": 0.237504, "disgust": 0.103438}}}, "language": "en", "sentiment": {"document": {"score": -0.66457, "label": "negative"}}}
-					var ctx = document.getElementById("Chart").getContext('2d');
-					var myChart = new Chart(ctx, data = {
-    					type: 'bar',
-    					data: {
-        					labels: ["Anger", "Joy", "Sadness", "Fear", "Disgust"],
-        					datasets: [{
-            					label: 'Percent Rating',
-           						data: [jsonData.emotion.document.emotion.anger, jsonData.emotion.document.emotion.joy, jsonData.emotion.document.emotion.sadness, jsonData.emotion.document.emotion.fear, jsonData.emotion.document.emotion.disgust],
-            					backgroundColor: [
-                					'rgba(255, 99, 132, 0.2)',
-                					'rgba(54, 162, 235, 0.2)',
-                					'rgba(255, 206, 86, 0.2)',
-                					'rgba(75, 192, 192, 0.2)',
-                					'rgba(153, 102, 255, 0.2)',
-            					],
-            					borderColor: [
-                					'rgba(255,99,132,1)',
-                					'rgba(54, 162, 235, 1)',
-                					'rgba(255, 206, 86, 1)',
-                					'rgba(75, 192, 192, 1)',
-                					'rgba(153, 102, 255, 1)',
-            					],
-            					borderWidth: 1
-        					}]
-    					},
-    					options: {
-        					scales: {
-            					yAxes: [{
-                					ticks: {
-                    					beginAtZero:true,
-                    					max: 1,
-                    					stepSize: 0.1,
-                					}
-            					}]
-        					}
-    					}
-					});
-				</script>
-				</div>
-				</div>
-			<div class="column2">
-				<h2>More Results</h2>
-				<p id="senti">HERE</p>
-				<script>
-					var jsonData = {"usage": {"text_characters": 19, "features": 3, "text_units": 1}, "keywords": [{"relevance": 0.916502, "text": "car"}], "emotion": {"document": {"emotion": {"anger": 0.165878, "joy": 0.077431, "sadness": 0.285616, "fear": 0.237504, "disgust": 0.103438}}}, "language": "en", "sentiment": {"document": {"score": -0.66457, "label": "negative"}}}
-					document.getElementById("senti").innerHTML = "Sentiment: " + jsonData.sentiment.document.label;						
-				</script>
+					<div class="container">
+						<canvas id="Chart" class="chart"></canvas>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+						<script>
+							var jsonData = {"usage": {"text_characters": 19, "features": 3, "text_units": 1}, "keywords": [{"relevance": 0.916502, "text": "car"}], "emotion": {"document": {"emotion": {"anger": 0.165878, "joy": 0.077431, "sadness": 0.285616, "fear": 0.237504, "disgust": 0.103438}}}, "language": "en", "sentiment": {"document": {"score": -0.66457, "label": "negative"}}}
+							var ctx = document.getElementById("Chart").getContext('2d');
+							var myChart = new Chart(ctx, data = {
+								type: 'bar',
+								data: {
+									labels: ["Anger", "Joy", "Sadness", "Fear", "Disgust"],
+									datasets: [{
+										label: 'Percent Rating',
+										data: [jsonData.emotion.document.emotion.anger, jsonData.emotion.document.emotion.joy, jsonData.emotion.document.emotion.sadness, jsonData.emotion.document.emotion.fear, jsonData.emotion.document.emotion.disgust],
+										backgroundColor: [
+											'rgba(255, 99, 132, 0.2)',
+											'rgba(54, 162, 235, 0.2)',
+											'rgba(255, 206, 86, 0.2)',
+											'rgba(75, 192, 192, 0.2)',
+											'rgba(153, 102, 255, 0.2)',
+										],
+										borderColor: [
+											'rgba(255,99,132,1)',
+											'rgba(54, 162, 235, 1)',
+											'rgba(255, 206, 86, 1)',
+											'rgba(75, 192, 192, 1)',
+											'rgba(153, 102, 255, 1)',
+										],
+										borderWidth: 1
+									}]
+								},
+								options: {
+									scales: {
+										yAxes: [{
+											ticks: {
+												beginAtZero:true,
+												max: 1,
+												stepSize: 0.1,
+											}
+										}]
+									}
+								}
+							});
+						</script>
+					</div>
 			</div>
 			<div class="column2">
 				<h2>More Results</h2>
