@@ -15,7 +15,7 @@
 import os
 from flask import Flask, jsonify , flash, redirect, render_template, request, session, abort
 #import analysis
-import watson_developer_cloud
+#import watson_developer_cloud
 app = Flask(__name__)
  
 @app.route("/hello/<string:name>/")
