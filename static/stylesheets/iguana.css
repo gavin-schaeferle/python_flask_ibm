@@ -1,4 +1,4 @@
-/* Genneral Formatting */
+/* General Formatting */
 *{
     font-family: Courier, sans-serif;
     font-size: 1.5vw;
@@ -19,9 +19,15 @@ header {
     font-size: 5vw;
 }
 
+/* Headings */
 h1{
     text-align: center;
     font-size: 2.5vw;
+}
+
+h2 {
+	color: #86C232;
+	text-align: center;
 }
 
 body {
@@ -29,25 +35,12 @@ body {
 	background-color: #6B6E70;
 }
 
-/* Create 2 equal columns that floats next to each other */
+/* Create 2 equal columns that floats next to each other*/
 .column {
     float: left;
     width: 50%;
     padding: 15px;
     color: #FFFFFF;
-}
-
-h2 {
-	color: #86C232;
-}
-
-div.column h2 {
-	text-align: center;
-	
-}
-
-.Chart {
-	width: 50%;
 }
 
 .form {
@@ -61,6 +54,10 @@ div.column h2 {
 	word-break: break-word;
 }
 
+.subButton {
+	color: #86C232;
+}
+
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -68,58 +65,46 @@ div.column h2 {
     clear: both;
 }
 
-.column2 {
-    float: left;
-    width: 50%;
-    padding: 15px;
-    color: #FFFFFF;
-    padding-bottom: 10px;
+
+/* Second Row Stuff */
+.Chart {
+	width: 50%;
+	background-color: #FFFFFF;
 }
 
 .container {
 	background-color: #FFFFFF;
 }
 
-.subButton {
-	color: #86C232;
-}
-
-div.column2 h2 {
-	text-align: center;
-}
-
 .other {
-	
+	width: 50%;
 }
 
-.row2:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-.row2 {
-	height: 50%;
+.copywriteFoot p{
+    width: 100%;
+    color: #86C232;
 }
 
-.copywriteFoot{
+.copywriteFoot {
+	bottom: 0;
+	background-color: #222629;
     text-align: center;
     font-size: 2vw;
     margin-top: 1.5em;
     padding-top: 1em;
+    padding-bottom: 1em;
+    color: #86C232;
     border-top: double;
+}
+
+
+/*contact.html*/
+.legend {
+	text-align: center;
 }
 
 @media screen and (max-width: 600px){
     .copywriteFoot{ font-size: 12px; }
-}
-
-.copywriteFoot p{
-    padding: 10px;
-    background-color: #222629;
-    color: #86C232; 
-    text-align: center;
-    bottom: 0;
-    width: 100%;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
