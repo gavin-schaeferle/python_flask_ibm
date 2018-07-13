@@ -11,6 +11,43 @@ body {
   margin: 0;
 }
 
+/*Kyle's Header Styling header.html*/
+/* Add a black background color to the top navigation */
+.topnav {
+    opacity: 0.7;
+    background-color: #333;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2vw;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+    background-color: cadetblue;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
 header {
     text-align: center;
     background-color: #222629;
@@ -97,94 +134,59 @@ body {
     border-top: double;
 }
 
-
-/*contact.html*/
-.legend {
-	text-align: center;
-}
-
-@media screen and (max-width: 600px){
-    .copywriteFoot{ font-size: 12px; }
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other 
+	When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
+	Show the link that contains should open and close the topnav (.icon) 
+	The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. 
+  	This class makes the topnav look good on small screens (display the links vertically instead of horizontally)*/
 @media screen and (max-width:600px) {
     .column {
         width: 100%;
     }
-}
-
-/*Kyle's Header Styling header.html*/
-/* Add a black background color to the top navigation */
-.topnav {
-    opacity: 0.7;
-    background-color: #333;
-    overflow: hidden;
-    z-index: 10;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 2vw;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Add an active class to highlight the current page */
-.active {
-    background-color: cadetblue;
-    color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-    display: none;
-}
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
-Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}
+    
+    .copywriteFoot { 
+    	font-size: 12px; 
+    }
+    
+    .topnav a:not(:first-child) { 
+    	display: none;
+    }
+    
     .topnav a.icon {
       float: right;
       display: block;
     }
-    .topnav a{ font-size: 16px; }
-}
-  
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. 
-  This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
+    
+    .topnav a { 
+    	font-size: 16px; 
+    }
+    
+    .topnav.responsive { 
+    	position: relative;
+    }
+    
     .topnav.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
+      	position: absolute;
+      	right: 0;
+      	top: 0;
     }
+    
     .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
+      	float: none;
+      	display: block;
+    	text-align: left;
     }
+    
 }
 
 /*Kyle's styling for contact form contact.php*/
-.map-responsive{
+.map-responsive {
     overflow:hidden;
     padding-bottom:25px;
     position:relative;
     height:200px;
 }
+
 .map-responsive iframe{
     left:0;
     top:0;
@@ -196,13 +198,17 @@ Show the link that contains should open and close the topnav (.icon) */
 table {  
     width: 90%;
     margin: 0 auto;
- }
+}
 
- table tbody td{
+table tbody td{
     vertical-align: top;
- }
+}
+
+table tbody td input {
+    min-height:
+}
  
- legend {
+legend {
     background-color: #616161 ;
     color: white;
     margin: 0 auto;
@@ -211,63 +217,73 @@ table {
     text-align: center;
     font-weight: bold;
     font-size: 2.5vw;
- }
- fieldset {
+}
+
+fieldset {
     margin: 1em auto;
     background-color: #F5F5F5;
     width: 70%;
- }
- form p {
+}
+
+form p {
     margin-top: 0.5em;
- }
- form input[type="text"], form input[type="email"], form input[type="tel"], form select {
+}
+
+form input[type="text"], form input[type="email"], form input[type="tel"], form select {
     font-size: 1.5vw;
     height: 24px;
     padding: 3px;
- }
- form select {
+}
+
+form select {
     height: 30px;
- }
- #firstname, #lastname, #email, #phonenumber, #references  { width: 90% }
+}
 
- #references{ box-shadow: 0 0 5px cornflowerblue; }
+#firstname, #lastname, #email, #phonenumber, #references  { 
+	width: 90%;
+	height: 90%; 
+}
 
- .box {
+#references{ 
+	box-shadow: 0 0 5px cornflowerblue; 
+}
+
+.box {
     border: 1pt solid #9E9E9E;
     padding: 0.5em;
     margin-bottom: 0.4em;
- }
+}
  
- .rectangle {
+.rectangle {
     background-color: #BDBDBD;
     padding: 0.5em;
     margin-bottom: 5px;
- }
+}
 
- .centered {
+.centered {
     display: block;
     margin: auto;
- }
+}
 
- .customcenter{
+.customcenter{
     text-align: center;
- }
+}
 
- .g-recaptcha {
+.g-recaptcha {
     display: inline-block;
 }
 
- .highlight {
+.highlight {
     background-color: #FFE0B2;
- }
+}
 
- .error {
+.error {
     background: #FFCDD2 url('../images/error.png') no-repeat 98% center;
     box-shadow: 0 0 5px #FF5252;
     border-color: #FF1744;    
- }
+}
  
- .button {
+.button {
    -webkit-border-radius: 3;
    -moz-border-radius: 3;
    border-radius: 3px;
@@ -277,42 +293,45 @@ table {
    background: #FF9100;
    padding: 5px 20px 5px 20px;
    text-decoration: none;
- }
+}
  
- .button:hover {
+.button:hover {
    background: #FFAB40;
    text-decoration: none;
- }
+}
 
- @media screen and (max-width: 800px){
+@media screen and (max-width: 800px){
     label {font-size: 12px;}
     .box{font-size: 12px;}
     form input[type="text"], form input[type="email"], form input[type="tel"], form select { font-size: 12px; }
     .button { font-size: 12px; }
 }
 
- /*Kyle's styling for contact form errors contact.html*/
- #errors{
+/*Kyle's styling for contact form errors contact.html*/
+ 
+#errors{
     width: 73%;
     margin: 0 auto;
     padding: 12px;
     background: #FFCDD2;
     box-shadow: 0 0 5px #FF5252;
     border-color: #FF1744;
- }
- #errors p{
+}
+
+#errors p{
     color: black;
     font-size: 1.5vw;
     font-weight: bold;
- }
- #errorMessages p{
+}
+
+#errorMessages p{
      color: black;
      font-size: 1.5vw;
      padding: 5px;
      font-weight: normal;
- }
+}
 
- @media screen and (max-width: 800px){
+@media screen and (max-width: 800px){
     #errors p{ font-size: 12px; }
     #errorMessages p{ font-size: 12px; }
 }
