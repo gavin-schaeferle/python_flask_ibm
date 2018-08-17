@@ -1,4 +1,4 @@
-# Cognitive Solutations
+# Cognative Article Analysis
 
 IBM 2018 Technical Intern Hack-a-thon project with the subject "Cognitive Solutions."
 
@@ -13,12 +13,12 @@ Initial upload.  No project available at this time.
 
 ## Authors
 
-* **Kyle Jon Aure** - *Initial work* - [KyleAure](https://github.com/KyleAure)
-* **Hannah Reuss** - *Initial work* - [HannahReuss](https://github.com/hannah-reuss)
-* **Gavin Schaeferle** - *Initial work* - [???](#)
-* **Katherine Kairis** - *Initial work* - [???](#)
-* **Jodie Wei** - *Initial work* - [???](#)
-* **Isabelle Nguyen** - *Initial work* - [???](#)
+* **Kyle Jon Aure** - *Project Management* - [KyleAure](https://github.com/KyleAure)
+* **Hannah Reuss** - *Front-End Development* - [hannah-reuss](https://github.com/hannah-reuss)
+* **Gavin Schaeferle** - *IBM Cloud Integration* - [gavin-schaeferle](https://github.com/gavin-schaeferle)
+* **Katherine Kairis** - *Python Expert* - [kkairis](https://github.com/kkairis)
+* **Jodie Wei** - *Node.js* - [Jodie Wei](https://github.com/jrw192)
+* **Isabelle Nguyen** - *javascript* - [???](#)
 
 ## License
 
